@@ -1,0 +1,555 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #368501;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+/* Hero Section Styling */
+.hero-section {
+    background-color: #4b0541;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #e5d9f3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: #d99c00;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #9592c5;
+    font-weight: 900;
+}
+
+/* Photo Frame Styling */
+.photo-frame {
+    display: inline-block;
+    position: relative;
+    margin-top: 30px;
+    border-radius: 10%;
+    overflow: hidden; /* Crop image into circle */
+    border: 5px solid #5e00f4; /* Golden border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow effect */
+}
+
+.photo-frame img {
+    width: 900px; /* Default image size */
+    height: 750px;
+    object-fit: cover; /* Ensure the image fits well in the circle */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+/* Hover Effect for Image */
+.photo-frame:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust the photo size for tablet screens */
+    .photo-frame img {
+        width: 500px; /* Slightly smaller photo on tablet */
+        height: 550px;
+    }
+    /* Hover Effect for Image */
+.photo-frame:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem; /* Smaller text on mobile */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem; /* Smaller text on mobile */
+    }
+
+    /* Adjust the photo size for mobile screens */
+    .photo-frame {
+        margin-top: 20px;
+    }
+
+    .photo-frame img {
+        width: 400px; /* Smaller photo on mobile */
+        height: 450px;
+    }
+    /* Hover Effect for Image */
+.photo-frame:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px;
+    }
+
+    /* Adjust the photo size even more for very small screens */
+    .photo-frame img {
+        width: 300px; /* Even smaller photo on very small screens */
+        height: 350px;
+    }
+    /* Hover Effect for Image */
+.photo-frame:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+}
+
+
+/* Intro Section */
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+    background-color: #f4f4f4;
+}
+
+.intro-content {
+    max-width: 50%;
+    padding: 20px; /* Adding padding to make space */
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.intro-content .btn {
+    padding: 10px 20px;
+    background-color: #f4b400;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Adding smooth transition */
+}
+
+.intro-content .btn:hover {
+    background-color: #d99c00; /* Change color on hover */
+}
+
+.intro-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px; /* Adjust padding on mobile */
+    }
+
+    .intro-content {
+        max-width: 100%; /* Take full width on mobile */
+        padding: 15px; /* Adjust padding for better spacing */
+    }
+
+    .intro-content h1 {
+        font-size: 2rem; /* Make the title more prominent */
+    }
+
+    .intro-content p {
+        font-size: 1.1rem; /* Slightly increase font size for readability */
+    }
+
+    .intro-content .btn {
+        padding: 12px 25px; /* Make button larger and easier to click */
+        font-size: 1.1rem; /* Increase button font size */
+    }
+
+    .intro-image img {
+        margin-top: 20px; /* Space out the image from the text */
+    }
+}
+
+
+/* Services Section */
+.services-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.services-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: 100%;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 100px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-text {
+    max-width: 60%;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 30px 20px; /* Adjust padding on smaller screens */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack the content vertically on mobile */
+        text-align: center; /* Center-align the text */
+        gap: 20px; /* Add some space between text and image */
+    }
+
+    .about-text {
+        max-width: 100%; /* Allow text to take full width on mobile */
+        font-size: 1.2rem; /* Increase font size for readability */
+        color: #333; /* Increase contrast for better readability */
+    }
+
+    .about-image img {
+        max-width: 80%; /* Limit image size on mobile */
+        margin-top: 20px; /* Add some space between the text and image */
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+}
+/* Contact Section Styling */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f1f1f1;  /* Light background to differentiate from other sections */
+    text-align: center;
+    border-top: 5px solid #007BFF;  /* Add a top border to make the section stand out */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #007BFF; /* Blue link color */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;  /* Smooth transition for hover/focus effects */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;  /* Blue border on focus for input fields */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);  /* Light blue glow on focus */
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    background-color: #007BFF;  /* Blue background for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;  /* Darken the button color on hover */
+    transform: scale(1.05);  /* Slightly enlarge button on hover */
+}
+
+/* Mobile responsiveness for Contact Section */
+@media (max-width: 768px) {
+    .contact-info ul {
+        padding-left: 0;
+    }
+
+    .contact-info li {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .contact-form h3 {
+        font-size: 1.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .contact-form button {
+        padding: 12px 25px;
+    }
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #64c905;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.footer-right a{
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+}
